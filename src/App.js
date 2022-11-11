@@ -1,26 +1,12 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
-import { DefaultLayout } from '~/components/Layout';
+import { DefaultLayout } from '~/components/Layouts';
 import { Fragment } from 'react';
 
 function App() {
     return (
         <Router>
             <div className="App">
-                <ul>
-                    <li>
-                        <Link to={'/'}>Home</Link>
-                    </li>
-                    <li>
-                        <Link to={'/following'}>Following</Link>
-                    </li>
-                    <li>
-                        <Link to={'/profile'}>Profile</Link>
-                    </li>
-                    <li>
-                        <Link to={'/upload'}>Upload</Link>
-                    </li>
-                </ul>
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         let Layout = DefaultLayout;
